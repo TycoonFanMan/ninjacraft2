@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NinjaCraft.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NinjaCraft.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/NinjaCraft.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+            <state relative-caret-position="714">
+              <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SettingsManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SettingsManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/SettingsManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state relative-caret-position="816">
+              <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -107,12 +107,10 @@
       <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="252" column="65" selection-start-line="252" selection-start-column="65" selection-end-line="252" selection-end-column="65" />
+            <state relative-caret-position="748">
+              <caret line="328" column="35" selection-start-line="328" selection-start-column="35" selection-end-line="328" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#12196#12197#0" expanded="true" />
-                <element signature="e#12273#12274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,14 +187,14 @@
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/commands/Set.java" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/CommandManager.java" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/commands/SetBalance.java" />
-        <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/NinjaCraft.java" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/commands/Leave.java" />
         <option value="$PROJECT_DIR$/src/plugin.yml" />
         <option value="$PROJECT_DIR$/src/inventories.yml" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/MySQLManager.java" />
-        <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/ArenaManager.java" />
         <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/SettingsManager.java" />
+        <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" />
+        <option value="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/NinjaCraft.java" />
       </list>
     </option>
   </component>
@@ -1077,24 +1075,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/NinjaCraft.java">
+    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/ArenaManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+        <state relative-caret-position="68">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/SettingsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="252" column="65" selection-start-line="252" selection-start-column="65" selection-end-line="252" selection-end-column="65" />
+        <state relative-caret-position="748">
+          <caret line="328" column="35" selection-start-line="328" selection-start-column="35" selection-end-line="328" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#12196#12197#0" expanded="true" />
-            <element signature="e#12273#12274#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1109,21 +1113,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/ArenaManager.java">
+    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/NinjaCraft.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="714">
+          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/SettingsManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

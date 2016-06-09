@@ -15,6 +15,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -23,6 +24,8 @@ import java.util.*;
  * Created by Chase on 5/24/2016.
  */
 public class NinjaCraft extends JavaPlugin implements Listener {
+
+    GamePlay game;
 
     @Override
     public void onEnable() {
@@ -40,7 +43,7 @@ public class NinjaCraft extends JavaPlugin implements Listener {
 
         getCommand("ninjacraft").setExecutor(new CommandManager(this));
 
-        GamePlay game = new GamePlay(this);
+        game = new GamePlay(this);
 
         getServer().getPluginManager().registerEvents(game, this);
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, game, 0, 5 * 20);
@@ -54,6 +57,8 @@ public class NinjaCraft extends JavaPlugin implements Listener {
             Bukkit.getServer().getLogger().severe("Could not close the MYSQL database!");
             e.printStackTrace();
         }*/
+        game.respawnChests();
+
         for (Player p : ArenaManager.getManager().getInGamePlayers()) {
             if(ArenaManager.getManager().removePlayer(p)){
                 SettingsManager sm = SettingsManager.getManager();

@@ -40,7 +40,7 @@ public class GamePlay implements Listener, Runnable {
 
     private HashMap<UUID, Scoreboard> boards;
     private static HashMap<UUID, Integer> pvptagged;
-    private ArrayList<Location> lootedChests;
+    private ArrayList<Block> lootedChests;
     private static final int TAG_TIME = 20; //in seconds;
 
     private Plugin p;
@@ -309,15 +309,24 @@ public class GamePlay implements Listener, Runnable {
 
                 //remove the chest
                 chest.setType(Material.AIR);
+                lootedChests.add(chest);
 
                 //respawn the chest in 45-120 seconds
                 Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(p, new Runnable() {
                     @Override
                     public void run() {
                         chest.setType(Material.CHEST);
+                        lootedChests.remove(chest);
                     }
                 }, ((int) Math.random() * (120 - 45) + 45) * 20);
             }
+        }
+    }
+
+    public void respawnChests(){
+        for(Block b: lootedChests){
+            b.setType(Material.CHEST);
+            lootedChests.remove(b);
         }
     }
 }
