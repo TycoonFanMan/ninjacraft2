@@ -5,6 +5,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.Chest;
+import org.bukkit.block.DoubleChest;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -17,6 +20,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -31,9 +35,12 @@ import java.util.UUID;
  * Created by Chase on 6/5/2016.
  */
 public class GamePlay implements Listener, Runnable {
+    private final int MONEY_MAX = 50;
+    private final int MONEY_MIN = 10;
 
     private HashMap<UUID, Scoreboard> boards;
     private static HashMap<UUID, Integer> pvptagged;
+    private ArrayList<Location> lootedChests;
     private static final int TAG_TIME = 20; //in seconds;
 
     private Plugin p;
@@ -87,23 +94,23 @@ public class GamePlay implements Listener, Runnable {
         }
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
-    public void preventArenaGreif(PlayerInteractEvent e) {
+    @EventHandler(priority = EventPriority.NORMAL)
+    public void preventArenaGreif(BlockBreakEvent e) {
         if(e.isCancelled()) return;
         if (ArenaManager.getManager().isInGame(e.getPlayer())) {
-            if(e.getClickedBlock().getType().isBlock()) {
+            if(ArenaManager.getManager().contains(e.getBlock().getLocation())){
                 e.setCancelled(true);
             }
         }
     }
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.NORMAL)
     public void preventArenaPlace(BlockPlaceEvent e) {
         if (ArenaManager.getManager().isInGame(e.getPlayer())) {
             e.setCancelled(true);
         }
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGH)
     public void signJoin(PlayerInteractEvent e) {
         if (!(e.getAction().compareTo(Action.RIGHT_CLICK_BLOCK) == 0)) return;
 
@@ -270,6 +277,47 @@ public class GamePlay implements Listener, Runnable {
                 }
             }, TAG_TIME * 20));
 
+        }
+    }
+
+    private void giveMoneyLoot(Player player){
+        Integer ranMon = randomMoney();
+        sm.getInvConfig().set("money." + player.getUniqueId().toString(),
+                (sm.getInvConfig().getInt("money." + player.getUniqueId().toString()) + ranMon));
+        sm.saveInvConfig();
+
+        msgr.sendMessage(PrefixType.INFO, "You found " + ChatColor.GOLD + "$" +  ranMon + ChatColor.GREEN + " in the chest!", player);
+    }
+
+    private Integer randomMoney(){
+        int money = (int) (Math.random() * (MONEY_MAX - MONEY_MIN)) + MONEY_MIN;
+        return money;
+    }
+
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void onChestLoot(InventoryOpenEvent e){
+        if(e.getInventory().getHolder() instanceof Chest || e.getInventory().getHolder() instanceof DoubleChest){
+
+            Location chestLoc = ((Chest) e.getInventory().getHolder()).getLocation();
+            if(ArenaManager.getManager().contains(chestLoc)){
+                e.setCancelled(true);
+                giveMoneyLoot((Player) e.getPlayer());
+
+                //drop rare items <- TO BE IMPLEMENTED AFTER A BASIC RUNNABLE BUILD IS COMPLETED
+
+                Block chest = chestLoc.getWorld().getBlockAt(chestLoc);
+
+                //remove the chest
+                chest.setType(Material.AIR);
+
+                //respawn the chest in 45-120 seconds
+                Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(p, new Runnable() {
+                    @Override
+                    public void run() {
+                        chest.setType(Material.CHEST);
+                    }
+                }, ((int) Math.random() * (120 - 45) + 45) * 20);
+            }
         }
     }
 }

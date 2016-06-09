@@ -59,6 +59,15 @@ public class ArenaManager {
         }
     }
 
+    public boolean contains(Location loc){
+        for(Arena a: arenas){
+            if(a.contains(loc)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Arena getArena(int id){
         for(Arena a : arenas){
             if(a.getID() == id){
@@ -135,7 +144,7 @@ public class ArenaManager {
         player.setFoodLevel(20);
 
         for(Player p: getInGamePlayers()){
-            msgr.sendMessage(PrefixType.INFO, player.getDisplayName() + " has join the arena!", p);
+            msgr.sendMessage(PrefixType.INFO, player.getDisplayName() + " has joined the arena!", p);
         }
 
     }

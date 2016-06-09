@@ -66,7 +66,6 @@ public class SettingsManager {
         saveArenaConfig();
 
 
-
         invConfig = new File(p.getDataFolder(), "inventories.yml");
 
         if(!invConfig.exists()){
