@@ -1,0 +1,8 @@
+name: NinjaCraft2
+version: 2.0 DEVBUILD 4
+main: me.tycoondev.ninjacraft.NinjaCraft
+description: Cool PVP Arena Thing yeah....
+commands:
+  ninjacraft:
+    description: ninjacraft
+    aliases: [nc, ninja]

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NinjaCraft2:jar">
+    <output-path>$PROJECT_DIR$/../../Server/plugins</output-path>
+    <root id="archive" name="NinjaCraft2.jar">
+      <element id="module-output" name="NinjaCraft2" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../worldedit-bukkit-6.1.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../Spigot/Spigot-Server/target/spigot-1.9.4-R0.1-SNAPSHOT.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

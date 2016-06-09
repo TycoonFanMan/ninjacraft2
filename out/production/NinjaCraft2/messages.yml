@@ -1,0 +1,6 @@
+prefix:
+  main: '&0[&cNinjaCraft&0]&r'
+  types:
+    error: '&cError: '
+    info: '&a'
+    warning: '&eWarning: '
