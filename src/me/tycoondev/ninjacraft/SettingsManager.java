@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.craftbukkit.libs.jline.internal.Log;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;
@@ -36,6 +37,9 @@ public class SettingsManager {
 
     private FileConfiguration messages = null;
     private File messageConfig = null;
+
+    private FileConfiguration shops = null;
+    private File shopConfig = null;
 
     public void setup(Plugin p){
         plugin = p;
@@ -69,11 +73,6 @@ public class SettingsManager {
         invConfig = new File(p.getDataFolder(), "inventories.yml");
 
         if(!invConfig.exists()){
-            /*try{
-                invConfig.createNewFile();
-            } catch (IOException e){
-                Bukkit.getServer().getLogger().warning("Could not create inventories config!");
-            }*/
             plugin.saveResource("inventories.yml", true);
         }
 
@@ -90,6 +89,28 @@ public class SettingsManager {
 
         messages = YamlConfiguration.loadConfiguration(messageConfig);
         saveMessageConfig();
+
+        shopConfig = new File(p.getDataFolder(), "shops.yml");
+
+        if(!shopConfig.exists()){
+            plugin.saveResource("shops.yml", true);
+
+        }
+
+        shops = YamlConfiguration.loadConfiguration(shopConfig);
+        saveShopConfig();
+    }
+
+    public FileConfiguration getShopConfig(){
+        return shops;
+    }
+
+    public void saveShopConfig(){
+        try{
+            shops.save(shopConfig);
+        } catch (IOException e){
+            Bukkit.getServer().getLogger().warning("Could not save shops config!");
+        }
     }
 
     public void saveInvConfig(){

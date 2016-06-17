@@ -46,7 +46,13 @@ public class NinjaCraft extends JavaPlugin implements Listener {
         game = new GamePlay(this);
 
         getServer().getPluginManager().registerEvents(game, this);
-        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, game, 0, 5 * 20);
+        getServer().getPluginManager().registerEvents(new ShopListener(), this);
+        Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            @Override
+            public void run() {
+                game.updateScoreboard();
+            }
+        }, 0, 5 * 20);
     }
 
     @Override

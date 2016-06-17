@@ -34,12 +34,14 @@ import java.util.UUID;
 /**
  * Created by Chase on 6/5/2016.
  */
-public class GamePlay implements Listener, Runnable {
+public class GamePlay implements Listener {
     private final int MONEY_MAX = 50;
     private final int MONEY_MIN = 10;
 
+    private HashMap<String, Shop> shops;
+
     private HashMap<UUID, Scoreboard> boards;
-    private static HashMap<UUID, Integer> pvptagged;
+    private static HashMap<UUID, Integer> pvpTagged;
     private ArrayList<Block> lootedChests;
     private static final int TAG_TIME = 20; //in seconds;
 
@@ -54,17 +56,21 @@ public class GamePlay implements Listener, Runnable {
         sbm = Bukkit.getServer().getScoreboardManager();
         sm = SettingsManager.getManager();
         msgr = MessageManager.getManager();
+        lootedChests = new ArrayList<>();
         boards = new HashMap<>();
-        pvptagged = new HashMap<>();
+        pvpTagged = new HashMap<>();
+        shops = new HashMap<>();
+        loadShops();
+    }
+
+    private void loadShops(){
+        for(String s: sm.getShopConfig().getConfigurationSection("shops").getKeys(false)){
+            shops.put(s, new Shop(s));
+        }
     }
 
     public static boolean isTagged(Player p){
-        return pvptagged.containsKey(p.getUniqueId());
-    }
-
-    @Override
-    public void run(){
-        updateScoreboard();
+        return pvpTagged.containsKey(p.getUniqueId());
     }
 
     public void updateScoreboard(){
@@ -132,6 +138,32 @@ public class GamePlay implements Listener, Runnable {
                         ArenaManager.getManager().addPlayer(e.getPlayer(), arenaNum);
                     } catch (Exception ex) {
                         //if worst comes to worse, they just use a command :P
+                    }
+                }
+            }
+        }
+    }
+    @EventHandler (priority = EventPriority.HIGHEST)
+    public void onShopClick(PlayerInteractEvent e){
+        if (!(e.getAction().compareTo(Action.RIGHT_CLICK_BLOCK) == 0)) return;
+
+        if (e.getClickedBlock().getType().compareTo(Material.SIGN) == 0
+                || e.getClickedBlock().getType().compareTo(Material.SIGN_POST) == 0
+                || e.getClickedBlock().getType().compareTo(Material.WALL_SIGN) == 0) {
+
+            Sign sign = (Sign) e.getClickedBlock().getState();
+            String[] identifiers = sign.getLines();
+
+
+            if (identifiers[0].equalsIgnoreCase("[ninjacraft]")) {
+                e.setCancelled(true);
+
+                //Join Sign
+                if (identifiers[1].equalsIgnoreCase("Click to open")) {
+                    String name = (identifiers[2].replace(" Shop", ""));
+                    Shop shop = shops.get(name);
+                    if (shop != null) {
+                        shop.openShop(e.getPlayer());
                     }
                 }
             }
@@ -250,7 +282,12 @@ public class GamePlay implements Listener, Runnable {
         if((e.getDamager() instanceof Player || e.getDamager() instanceof Projectile) && e.getEntity() instanceof Player){
             Player dmg;
             if(e.getDamager() instanceof Projectile){
-                dmg = (Player) ((Projectile) e.getDamager()).getShooter();
+                if(((Projectile) e.getDamager()).getShooter() instanceof Player) {
+                    dmg = (Player) ((Projectile) e.getDamager()).getShooter();
+                }
+                else{
+                    return;
+                }
             }
             else{
                 dmg = (Player) e.getDamager();
@@ -259,8 +296,8 @@ public class GamePlay implements Listener, Runnable {
 
 
             //If player is already tagged, cancel the task and then restart it.
-            if(pvptagged.containsKey(dmg.getUniqueId())){
-                Bukkit.getServer().getScheduler().cancelTask(pvptagged.get(dmg.getUniqueId()));
+            if(pvpTagged.containsKey(dmg.getUniqueId())){
+                Bukkit.getServer().getScheduler().cancelTask(pvpTagged.get(dmg.getUniqueId()));
 
             }
             else{
@@ -269,10 +306,10 @@ public class GamePlay implements Listener, Runnable {
                 MessageManager.getManager().sendMessage(PrefixType.INFO, "Stay out of combat for " + TAG_TIME + " seconds to become untagged.", dmg);
             }
 
-            pvptagged.put(dmg.getUniqueId(), Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(p, new Runnable() {
+            pvpTagged.put(dmg.getUniqueId(), Bukkit.getServer().getScheduler().scheduleSyncDelayedTask(p, new Runnable() {
                 @Override
                 public void run() {
-                    pvptagged.remove(dmg.getUniqueId());
+                    pvpTagged.remove(dmg.getUniqueId());
                     msgr.sendMessage(PrefixType.INFO, "You have left combat!", dmg);
                 }
             }, TAG_TIME * 20));

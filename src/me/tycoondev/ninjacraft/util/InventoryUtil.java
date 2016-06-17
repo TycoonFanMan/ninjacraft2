@@ -48,6 +48,7 @@ public class InventoryUtil {
         for(int i = 0; i < inv.getSize(); i++){
             ItemStack item = inv.getItem(i);
             if(item != null){
+
                 String serializedItem = new String();
 
                 String itemType = item.getType().toString();
@@ -170,4 +171,58 @@ public class InventoryUtil {
         }
         return inv;
     }
+/**
+    public static String serializeItemStack(ItemStack item){
+        String serializedItem = new String();
+
+        String itemType = item.getType().toString();
+        serializedItem += "t@" + itemType;
+
+        if( item.getDurability() != 0){
+            String itemDura = String.valueOf(item.getDurability());
+            serializedItem += ":d@" + itemDura;
+        }
+
+        if( item.getAmount() != 1){
+            String itemAmount = String.valueOf(item.getAmount());
+            serializedItem += ":a@" + itemAmount;
+        }
+
+        if( item.hasItemMeta()) {
+            String itemName = String.valueOf(item.getItemMeta().getDisplayName());
+
+            if (!itemName.equals("null")) serializedItem += ":n@" + itemName;
+
+            String itemLore = String.valueOf(item.getItemMeta().getLore());
+            if (!itemLore.equals("null")) {
+                serializedItem += ":l@" + itemLore;
+            }
+
+                    /*
+                    This next part checks to see if the ItemStack contains additional item meta.
+                    This code will be executed if the item is a leather armour piece or a potion.
+
+            if(item.getItemMeta() instanceof PotionMeta){
+                String itemEffect = ((PotionMeta) item.getItemMeta()).getBasePotionData().getType().toString();
+                boolean itemEffectUp = ((PotionMeta) item.getItemMeta()).getBasePotionData().isUpgraded();
+                boolean itemEffectExtended = ((PotionMeta) item.getItemMeta()).getBasePotionData().isExtended();
+
+                serializedItem += ":p@" + itemEffect + "@" + itemEffectUp + "@" + itemEffectExtended;
+            }
+
+            if(item.getItemMeta() instanceof LeatherArmorMeta){
+                String itemColor = String.valueOf(((LeatherArmorMeta) item.getItemMeta()).getColor().asRGB());
+                serializedItem += ":c@" + itemColor;
+            }
+
+        }
+
+        Map<Enchantment, Integer> itemEnch = item.getEnchantments();
+        if(itemEnch.size() > 0){
+            for(Map.Entry<Enchantment, Integer> ench: itemEnch.entrySet()){
+                serializedItem += ":e@" + ench.getKey().getName() + "@" + ench.getValue();
+            }
+        }
+        return serializedItem;
+    } **/
 }

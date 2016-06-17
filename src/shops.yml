@@ -1,0 +1,12 @@
+shops:
+  weapon:
+    items:
+      DIAMOND_SWORD:
+        price: 500
+        amount: 1
+  armour:
+    items:
+  food:
+    items:
+  potion:
+    items:
