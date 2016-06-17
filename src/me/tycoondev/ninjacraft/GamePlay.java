@@ -19,7 +19,6 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -35,6 +34,8 @@ import java.util.UUID;
  * Created by Chase on 6/5/2016.
  */
 public class GamePlay implements Listener {
+
+    //min possible money in chest to max possible money in chest
     private final int MONEY_MAX = 50;
     private final int MONEY_MIN = 10;
 
@@ -74,7 +75,8 @@ public class GamePlay implements Listener {
     }
 
     public void updateScoreboard(){
-        for(Player online: Bukkit.getOnlinePlayers()){
+
+        for(Player online: ArenaManager.getManager().getInGamePlayers()){
             if (!(boards.containsKey(online.getUniqueId()))) {
                 boards.put(online.getUniqueId(), sbm.getNewScoreboard());
             }
@@ -355,7 +357,7 @@ public class GamePlay implements Listener {
                         chest.setType(Material.CHEST);
                         lootedChests.remove(chest);
                     }
-                }, ((int) Math.random() * (120 - 45) + 45) * 20);
+                }, (int) ( Math.random() * (120 - 45) + 45) * 20);
             }
         }
     }
@@ -363,7 +365,7 @@ public class GamePlay implements Listener {
     public void respawnChests(){
         for(Block b: lootedChests){
             b.setType(Material.CHEST);
-            lootedChests.remove(b);
         }
+        lootedChests.clear();
     }
 }
