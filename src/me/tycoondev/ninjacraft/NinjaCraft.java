@@ -46,7 +46,7 @@ public class NinjaCraft extends JavaPlugin implements Listener {
         game = new GamePlay(this);
 
         getServer().getPluginManager().registerEvents(game, this);
-        getServer().getPluginManager().registerEvents(new ShopListener(), this);
+        getServer().getPluginManager().registerEvents(new ShopListener(this), this);
         Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
             @Override
             public void run() {
@@ -85,6 +85,10 @@ public class NinjaCraft extends JavaPlugin implements Listener {
 
         return (WorldEditPlugin) p;
 
+    }
+
+    public GamePlay getGame(){
+        return game;
     }
 
 }

@@ -13,8 +13,10 @@ import org.bukkit.event.player.PlayerInteractEvent;
  */
 public class ShopListener implements Listener {
 
-    public ShopListener(){
+    private NinjaCraft p;
 
+    public ShopListener(NinjaCraft p){
+        this.p = p;
     }
 
     @EventHandler (priority = EventPriority.HIGHEST)
@@ -35,8 +37,8 @@ public class ShopListener implements Listener {
                 //Join Sign
                 if (identifiers[1].equalsIgnoreCase("Click to open")) {
                     try {
-                        int arenaNum = Integer.parseInt(identifiers[2].replace(" Shop", ""));
-                        ArenaManager.getManager().addPlayer(e.getPlayer(), arenaNum);
+                        String shopName = identifiers[2].replace(" Shop", "").toLowerCase();
+                        p.getGame().getShops().get(shopName).openShop(e.getPlayer());
                     } catch (Exception ex) {
                         //if worst comes to worse, they just use a command :P
                     }

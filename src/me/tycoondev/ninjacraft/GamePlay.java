@@ -64,6 +64,10 @@ public class GamePlay implements Listener {
         loadShops();
     }
 
+    public HashMap<String, Shop> getShops(){
+        return shops;
+    }
+
     private void loadShops(){
         for(String s: sm.getShopConfig().getConfigurationSection("shops").getKeys(false)){
             shops.put(s, new Shop(s));
