@@ -8,22 +8,17 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/Arena.java" line="50" />
     <bookmark url="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/util/InventoryUtil.java" line="81" />
-    <bookmark url="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" line="138" />
+    <bookmark url="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" line="143" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bd7a96a-32f0-4f35-a54d-5a2d81559470" name="Default" comment="v2.0.5 Update">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/ShopManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ShopItem.java" afterPath="" />
+    <list default="true" id="7bd7a96a-32f0-4f35-a54d-5a2d81559470" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay$1.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay$2.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/GamePlay.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/NinjaCraft.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/NinjaCraft.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/SettingsManager.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/SettingsManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/util/InventoryUtil.class" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/me/tycoondev/ninjacraft/util/InventoryUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/shops.yml" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/shops.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NinjaCraft2.iml" afterPath="$PROJECT_DIR$/NinjaCraft2.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NinjaCraft2/plugin.yml" afterPath="$PROJECT_DIR$/out/production/NinjaCraft2/plugin.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" afterPath="$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/plugin.yml" afterPath="$PROJECT_DIR$/src/plugin.yml" />
     </list>
     <ignored path="NinjaCraft.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +53,7 @@
       <file leaf-file-name="Shop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/Shop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
+            <state relative-caret-position="1377">
               <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -72,8 +67,18 @@
       <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,8 +97,8 @@
       <file leaf-file-name="GamePlay.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="359" column="59" selection-start-line="359" selection-start-column="59" selection-end-line="359" selection-end-column="59" />
+            <state relative-caret-position="289">
+              <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,9 +111,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -208,20 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,26 +261,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NinjaCraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NinjaCraft2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ninjacraft" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -299,8 +280,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Program Files/Git/cmd/git.exe" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -569,16 +550,22 @@
       <option name="project" value="LOCAL" />
       <updated>1466198468482</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v2.0.5 Update">
+      <created>1466204286452</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1466204286452</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -593,6 +580,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -779,13 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/commands/SubCommand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -955,21 +936,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <marker date="1465496932672" expanded="false" signature="573:583" ph=" { " />
-            <marker date="1465496932672" expanded="false" signature="598:604" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ShopItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ShopItem.java" />
     <entry file="file://$PROJECT_DIR$/src/shops.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -983,9 +953,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1377">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3219#3220#0" expanded="true" />
+            <element signature="e#3256#3257#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -997,30 +985,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/Shop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3219#3220#0" expanded="true" />
-            <element signature="e#3256#3257#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/tycoondev/ninjacraft/GamePlay.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="359" column="59" selection-start-line="359" selection-start-column="59" selection-end-line="359" selection-end-column="59" />
+        <state relative-caret-position="289">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1058,6 +1034,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>spigot-1.9.4</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

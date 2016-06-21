@@ -19,5 +19,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="spigot-api-1.9.4-R0.1-SNAPSHOT" level="application" />
   </component>
 </module>

@@ -76,29 +76,34 @@ public class GamePlay implements Listener {
 
     public void updateScoreboard(){
 
-        for(Player online: ArenaManager.getManager().getInGamePlayers()){
-            if (!(boards.containsKey(online.getUniqueId()))) {
-                boards.put(online.getUniqueId(), sbm.getNewScoreboard());
+        for(Player online: Bukkit.getOnlinePlayers()) {
+            if (ArenaManager.getManager().isInGame(online)) {
+                if (!(boards.containsKey(online.getUniqueId()))) {
+                    boards.put(online.getUniqueId(), sbm.getNewScoreboard());
+                }
+
+                Scoreboard board = boards.get(online.getUniqueId());
+                Objective o = board.getObjective(DisplaySlot.SIDEBAR);
+                if (o != null) o.unregister();
+                o = board.registerNewObjective("ninjacraft", "dummy");
+                o.setDisplayName(ChatColor.BLACK + "[" + ChatColor.RED + "NinjaCraft"
+                        + ChatColor.BLACK + "]");
+                o.setDisplaySlot(DisplaySlot.SIDEBAR);
+
+                if (!sm.getInvConfig().contains("money." + online.getUniqueId().toString())) {
+                    sm.getInvConfig().set("money." + online.getUniqueId().toString(), 0);
+                    sm.saveInvConfig();
+                }
+
+                o.getScore("").setScore(2);
+                o.getScore(ChatColor.GOLD + "Money: " + ChatColor.GREEN
+                        + sm.getInvConfig().getInt("money." + online.getUniqueId().toString())).setScore(1);
+
+                online.setScoreboard(board);
             }
-
-            Scoreboard board = boards.get(online.getUniqueId());
-            Objective o = board.getObjective(DisplaySlot.SIDEBAR);
-            if(o != null) o.unregister();
-            o = board.registerNewObjective("ninjacraft", "dummy");
-            o.setDisplayName(ChatColor.BLACK + "[" + ChatColor.RED + "NinjaCraft"
-                    + ChatColor.BLACK + "]");
-            o.setDisplaySlot(DisplaySlot.SIDEBAR);
-
-            if(!sm.getInvConfig().contains("money." + online.getUniqueId().toString())){
-                sm.getInvConfig().set("money." + online.getUniqueId().toString(), 0);
-                sm.saveInvConfig();
+            else{
+                online.setScoreboard(sbm.getNewScoreboard());
             }
-
-            o.getScore("").setScore(2);
-            o.getScore(ChatColor.GOLD + "Money: " + ChatColor.GREEN
-                    + sm.getInvConfig().getInt("money." + online.getUniqueId().toString())).setScore(1);
-
-            online.setScoreboard(board);
         }
     }
 
@@ -174,29 +179,34 @@ public class GamePlay implements Listener {
 
     @EventHandler
     public void onPlayerDeath(EntityDamageEvent e){
-        if(!(e.getEntity() instanceof Player)) return;
-        Player p = (Player) e.getEntity();
-        if(ArenaManager.getManager().isInGame(p) && e.getDamage() >= p.getHealth()){
-            e.setCancelled(true);
-            Location drops = p.getLocation();
-            ArenaManager.getManager().removePlayer(p);
+        if(!(e instanceof EntityDamageByEntityEvent)) {
+            if (!(e.getEntity() instanceof Player)) return;
+            Player p = (Player) e.getEntity();
+            if (ArenaManager.getManager().isInGame(p) && e.getDamage() >= p.getHealth()) {
+                e.setCancelled(true);
+                Location drops = p.getLocation();
+                ArenaManager.getManager().removePlayer(p);
 
-            sm.getInvConfig().set("money." + p.getUniqueId().toString(), 0);
-            sm.getInvConfig().set("inv." + p.getUniqueId().toString(), null);
-            sm.saveInvConfig();
+                sm.getInvConfig().set("money." + p.getUniqueId().toString(), 0);
+                sm.getInvConfig().set("inv." + p.getUniqueId().toString(), null);
+                sm.saveInvConfig();
 
-            for(ItemStack item: p.getInventory()){
-                try {
-                    p.getWorld().dropItemNaturally(drops, item);
-                } catch (Exception ex){
-                    //Throws an exception in a Null inventory spot, but continues just fine!
+                for (ItemStack item : p.getInventory()) {
+                    try {
+                        p.getWorld().dropItemNaturally(drops, item);
+                    } catch (Exception ex) {
+                        //Throws an exception in a Null inventory spot, but continues just fine!
+                    }
                 }
+
+                p.getInventory().clear();
+
+                MessageManager.getManager().broadcastMessage(PrefixType.INFO, p.getDisplayName()
+                        + ChatColor.RED + " died! ");
             }
-
-            p.getInventory().clear();
-
-            MessageManager.getManager().broadcastMessage(PrefixType.INFO, p.getDisplayName()
-                    + ChatColor.RED + " died! ");
+        }
+        else{
+            kill((EntityDamageByEntityEvent) e);
         }
     }
 
@@ -235,8 +245,7 @@ public class GamePlay implements Listener {
 
     }
 
-    @EventHandler
-    public void onKill(EntityDamageByEntityEvent e){
+    private void kill(EntityDamageByEntityEvent e){
         if(!(e.getDamager() instanceof Player && e.getEntity() instanceof Player)){
             return;
         }
